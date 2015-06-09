@@ -1,14 +1,5 @@
-public class LList implements Comparable{
+public class LList {
     
-
-public int <LinkedListNode> compareTo(LinkedListNode n){
-  //Case insensitively compare the first 3 characters of the two nodes
-  String myHead = data.substring(0,3).toLowerCase();
-  String comparableHead = n.data.substring(0,3).toLowerCase();
-
-  return (myHead.compareTo(comparableHead));
-
-}
     private Node l;
     private int len;
     
@@ -19,7 +10,9 @@ public int <LinkedListNode> compareTo(LinkedListNode n){
 
     public void add(String s){
 	Node tmp = new Node(s);
-	tmp.setNext(l);
+	tmp = l;
+
+tmp.setNext(l);
 	l = tmp;
     }
 
