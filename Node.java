@@ -3,6 +3,11 @@ public class Node {
     private String data;
     private Node next;  //kind of like a recursive data structure
 
+    public Node() {
+	data = null;
+	next = null;
+    }
+
     public Node(String s) {
 	data = s;
 	next = null;
