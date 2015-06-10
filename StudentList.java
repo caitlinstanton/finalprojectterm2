@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class StudentList extends Gradebook{
+public class StudentList {
     
     private Node root;
     private Node l;

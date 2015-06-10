@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class GradeList extends StudentList {
+public class GradeList {
     
     // private Node average;
     private GradeNode n;
@@ -23,13 +23,13 @@ public class GradeList extends StudentList {
 	n = g;
     }
 
-    public String find(int n) {
+    public String find(int k) {
 	GradeNode tmp = n;
 	int counter = -1;
 	String s = "";
-	for (tmp = l; tmp != null; tmp = tmp.getNext()) {
+	for (tmp = n; tmp != null; tmp = tmp.getNext()) {
 	    counter = counter + 1;
-	    if (counter == n) {
+	    if (counter == k) {
 	        s = s + tmp;
 	    }
 	}
