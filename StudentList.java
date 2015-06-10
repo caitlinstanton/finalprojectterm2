@@ -1,41 +1,24 @@
-public class LList {
+public class StudentList {
     
+    private Node root;
     private Node l;
     private int len;
     
-    public LList() {
-	l = new;
+    public StudentList(String teachername) {
+	root = new Node(teachername);
+	l = new Node();
+	root.setNext(l);
 	len = 0;
+    }
+
+    public String getRoot() {
+	return root.name;
     }
 
     public void add(String s){
 	Node tmp = new Node(s);
-	tmp = l;
-
-tmp.setNext(l);
+	tmp.setNext(l);
 	l = tmp;
-    }
-
-    public void insert(String data){
-	Node newNode = new Node(data);
-	if(l == null){
-	    l = newNode;
-	}else{
-	    Node current = l;
-	    Node prev;
-	    
-	    while(current.getNext() != null){
-		if(current.compareTo(newNode)<0){
-		    newNode.setNext(current);
-		    prev.setNext(newNode);
-		    break;
-		}
-		prev = current;
-		current = current.getNext();
-		
-	    }
-	    
-	}
     }
 
     public String find(int n) {

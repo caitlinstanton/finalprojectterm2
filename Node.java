@@ -1,24 +1,21 @@
 public class Node {
 
-    private String data;
-    private Node next;  //kind of like a recursive data structure
-
-    public Node() {
-	data = null;
-	next = null;
-    }
+    private String studentName;
+    private Node next;
+    private GradeList grades;
 
     public Node(String s) {
-	data = s;
+	studentName = s;
+	grades = new GradeList();
 	next = null;
     }
     
-    public void setData(String s) {
-	data = s;
+    public void changeName(String s) {
+	studentName = s;
     }
 
-    public String getData() {
-	return data;
+    public String getName() {
+	return studentName;
     }
 
     public void setNext(Node n) {
@@ -29,8 +26,17 @@ public class Node {
 	return next;
     }
 
+    public void addGrade(GradeNode n) {
+	grades.add(n);
+    }
+
+    public void addGrades(String assigmentType, int grade) {
+	GradeNode tmp = new GradeNode(assignmentType, grade);
+	grades.add(tmp);
+    }
+
     public String toString() {
-	return data;
+	return grades.toString();
     }
 
 }
