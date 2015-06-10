@@ -24,6 +24,10 @@ public class StudentList {
 	root.setNext(added);
 	len++;
     }
+
+    public Node find(String name) {
+
+    }
     
     public String toString(){
 	if (len == 0) {
