@@ -1,22 +1,11 @@
 import java.util.*;
 import java.io.*;
 
-public class Gradebook
-{
-    /**
-     * The students in this gradebook.
-     */
+public class Gradebook {
+
     private ArrayList<StudentList> teachers;
 
-    /**
-     * Creates an empty gradebook that can record grades for the given
-     * number of assignments.
-     *
-     * @param assignments a positive integer giving the number of assignments
-     *        to record grades for
-     */
-    public Gradebook()
-    {
+    public Gradebook() {
         teachers = new ArrayList<StudentList>();
     }
     
@@ -25,28 +14,23 @@ public class Gradebook
 	StudentList n = new StudentList(name);
 	teachers.add(n);
 	return name;
-
     }
     
-    /**
-     * Print a report of all students with names, average grades, and
-     * number of zero grades.  The report is printed to
-     * <code>System.out</code>.
-     */
-    public void getTeacher(String name) {
+    public StudentList getTeacher(String name) {
 	for (int i = 0; i < teachers.size(); i++) {
 	    if (teachers.get(i).getRoot() == name) {
-		teachers.get(i).toString();
+		return teachers.get(i);
 	    }
 	}
+	return null;
     }
 
-	public String toString() {
-		String ans = "";
-		for (int i = 0; i < teachers.size(); i++) {
-			ans = ans + "," + teachers.get(i);
-		}
-		return ans;
+    public String toString() {
+	String ans = "";
+	for (int i = 0; i < teachers.size(); i++) {
+	    ans = ans + "," + teachers.get(i).getRoot();
 	}
-	
+	return ans;
+    }
+    
 }
