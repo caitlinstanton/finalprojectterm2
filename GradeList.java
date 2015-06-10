@@ -1,27 +1,30 @@
-public class GradeList {
+import java.util.*;
+import java.io.*;
+
+public class GradeList extends StudentList {
     
     // private Node average;
-    private Node l;
+    private GradeNode n;
     private int len;
     
     public GradeList() {
-	l = new Node();
+	n = new GradeNode();
 	len = 0;
     }
 
     public void add(String assignment, int grade){
 	GradeNode tmp = new GradeNode(assignment, grade);
-	tmp.setNext(l);
-	l = tmp;
+	tmp.setNext(n);
+	n = tmp;
     }
 
-    public void add(GradeNode n) {
-	n.setNext(l);
-	l = n;
+    public void add(GradeNode g) {
+	g.setNext(n);
+	n = g;
     }
 
     public String find(int n) {
-	Node tmp = l;
+	GradeNode tmp = n;
 	int counter = -1;
 	String s = "";
 	for (tmp = l; tmp != null; tmp = tmp.getNext()) {
@@ -35,8 +38,8 @@ public class GradeList {
 
     public void insert(String assignment, int grade) {
 	GradeNode added = new GradeNode(assignment, grade);
-	Node tmp = l;
-	for (int i = 0; i < n - 1; tmp = tmp.getNext()) {
+	GradeNode tmp = n;
+	for (int i = 0; i < len; tmp = tmp.getNext()) {
 	    if (tmp == null) {
 		throw new IndexOutOfBoundsException();
 	    }

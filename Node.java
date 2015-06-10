@@ -1,8 +1,16 @@
+import java.util.*;
+import java.io.*;
+
 public class Node {
 
     private String studentName;
     private Node next;
     private GradeList grades;
+
+    public Node() {
+	studentName = null;
+	next = null;
+    }
 
     public Node(String s) {
 	studentName = s;
@@ -30,7 +38,7 @@ public class Node {
 	grades.add(n);
     }
 
-    public void addGrades(String assigmentType, int grade) {
+    public void addGrades(String assignmentType, int grade) {
 	GradeNode tmp = new GradeNode(assignmentType, grade);
 	grades.add(tmp);
     }

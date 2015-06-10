@@ -1,4 +1,7 @@
-public class StudentList {
+import java.util.*;
+import java.io.*;
+
+public class StudentList extends Gradebook{
     
     private Node root;
     private Node l;
@@ -12,11 +15,11 @@ public class StudentList {
     }
 
     public String getRoot() {
-	return root.name;
+	return root.getName();
     }
 
-    public void add(String s){
-	Node tmp = new Node(s);
+    public void add(String student){
+	Node tmp = new Node(student);
 	tmp.setNext(l);
 	l = tmp;
     }

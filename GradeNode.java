@@ -1,9 +1,18 @@
+import java.util.*;
+import java.io.*;
+
 public class GradeNode {
 
     private String assignmentName;
     private int assignmentGrade;
-    private Node next;
+    private GradeNode next;
 
+    public GradeNode() {
+	assignmentName = null;
+	//assignmentGrade = null;
+	next = null;
+    }
+    
     public GradeNode(String assignment, int grade) {
         assignmentName = assignment;
         assignmentGrade = grade;
@@ -22,15 +31,15 @@ public class GradeNode {
 	assignmentGrade = n;
     }
     
-    public void getGrade() {
+    public int getGrade() {
 	return assignmentGrade;
     }
 
-    public void setNext(Node n) {
+    public void setNext(GradeNode n) {
 	next = n;
     }
     
-    public Node getNext() {
+    public GradeNode getNext() {
 	return next;
     }
 
