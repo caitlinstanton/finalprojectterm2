@@ -28,7 +28,7 @@ public class Student {
 	return grades;
     }
 
-    public void addGrade(String type, int grade) {
+    public void newGrade(String type, int grade) {
 	grades.add(type, grade);
     }
 

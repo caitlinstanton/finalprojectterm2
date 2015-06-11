@@ -42,8 +42,14 @@ public class Teacher {
 	return null;
     }
 
-    public void addGrades(Student n, String type, int grade) {
-	//n.newGrade(type, grade);
+    public void addGrades(String student, String type, int grade) {
+	Student n = find(student);
+	n.newGrade(type, grade);
+    }
+
+    public GradeList getGrades(String s) {
+	Student n = find(s);
+	return n.getGrades();
     }
 
     public String toString() {

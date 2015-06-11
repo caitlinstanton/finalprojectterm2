@@ -14,6 +14,10 @@ public class Driver {
         stuy.getTeacher("Zamansky").add("MICHAEEEEL");
 	System.out.println(stuy.getTeacher("Zamansky"));
 
+	stuy.getTeacher("Zamansky").addGrades("CAITLIN","blah",97);
+
+	System.out.println(stuy.getTeacher("Zamansky").getGrades("CAITLIN"));
+
 	System.out.println();
 
 
