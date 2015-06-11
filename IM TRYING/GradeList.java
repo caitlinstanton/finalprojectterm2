@@ -45,9 +45,10 @@ public class GradeList {
 	String s = "";
 	GradeNode tmp;
 	for (tmp = average; tmp != null; tmp = tmp.getNext()){
-	    s = s + tmp + " --> ";
+	    s = s + tmp + "\n";
 	}
-	return s;
+        int e = s.indexOf("null");
+        return s.substring(0,e);
     }
     
 }

@@ -5,6 +5,7 @@ public class Student {
 
     private String name;
     private GradeList grades;
+    
 
     public Student() {
 	name = null;
@@ -23,8 +24,13 @@ public class Student {
     public String getName() {
 	return name;
     }
+    
+    public int getAvg(){
+        return grades.calcAvg;
+    }
 
     public GradeList getGrades() {
+    System.out.print(name+"'s Grades:\n");
 	return grades;
     }
 
