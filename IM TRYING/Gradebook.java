@@ -24,6 +24,8 @@ public class Gradebook {
 	return null;
     }
 
+    //REMOVE A TEACHER
+
     public String toString() {
 	String ans = "";
 	for (int i = 0; i < teachers.size(); i++) {

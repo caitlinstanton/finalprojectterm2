@@ -4,16 +4,16 @@ import java.io.*;
 public class Teacher {
 
     private String name;
-    private ArrayList<Student> myClass;
+    private ArrayList<Course> myClasses;
     
     public Teacher() {
 	name = null;
-	myClass = null;
+	myClasses = null;
     }
     
     public Teacher(String s) {
 	name = s;
-	myClass = new ArrayList<Student>();
+	myClasses = new ArrayList<Course>();
     }
 
     public void setName(String s) {
@@ -24,38 +24,39 @@ public class Teacher {
 	return name;
     }
 
-    public ArrayList<Student> getStudents() {
-	return myClass;
+    public ArrayList<Course> getCourse() {
+	return myClasses;
     }
-
-    public void add(String s) {
-	Student added = new Student(s);
-	myClass.add(added);
-    }
-
-    public Student find(String s) {
-	for (int i = 0; i < myClass.size(); i++) {
-	    if (myClass.get(i).getName() == s) {
-		return myClass.get(i);
+    
+    public Course findCourse(String s) {
+	for (int i = 0; i < myClasses.size(); i++) {
+	    if (myClasses.get(i).getName() == s) {
+		return myClasses.get(i);
 	    }
 	}
 	return null;
     }
 
-    public void addGrades(String student, String type, int grade) {
-	Student n = find(student);
-	n.newGrade(type, grade);
+    public void add(String s, int n) {
+	Course added = new Course(s,n);
+	myClasses.add(added);
     }
 
-    public GradeList getGrades(String s) {
-	Student n = find(s);
-	return n.getGrades();
+    public void addGrades(String myClass, String student, String type, int grade) {
+	Course c = findCourse(myClass);
+	Student n = c.find(student);
+	if (n != null) {
+	    n.newGrade(type, grade);
+	} else {
+	    System.exit(0);
+	}	
     }
+
 
     public String toString() {
-	String ans = "TEACHER: " + name + "-" + "\n";
-	for (int i = 0; i < myClass.size(); i++) {
-	    ans = ans + myClass.get(i).toString() + "\n";
+	String ans = "TEACHER: " + name + "\n";
+	for (int i = 0; i < myClasses.size(); i++) {
+	    ans = ans + myClasses.get(i).toString() + "\n";
 	}
 	return ans;
     }
