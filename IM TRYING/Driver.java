@@ -15,6 +15,8 @@ public class Driver {
 	System.out.println(stuy.getTeacher("Zamansky"));
 
 	stuy.getTeacher("Zamansky").addGrades("CAITLIN","blah",97);
+	stuy.getTeacher("Zamansky").addGrades("CAITLIN","coolness",103);
+	stuy.getTeacher("Zamansky").addGrades("CAITLIN","urgh",65);
 
 	System.out.println(stuy.getTeacher("Zamansky").getGrades("CAITLIN"));
 
