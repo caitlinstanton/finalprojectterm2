@@ -26,7 +26,7 @@ public class Student {
     }
     
     public int getAvg(){
-        return grades.calcAvg;
+        return grades.getAvg();
     }
 
     public GradeList getGrades() {
@@ -39,7 +39,7 @@ public class Student {
     }
 
     public String toString() {
-	return name;
+	return name + ": " + getAvg();
     }
 
 }

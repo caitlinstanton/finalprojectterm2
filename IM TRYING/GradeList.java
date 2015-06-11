@@ -33,12 +33,20 @@ public class GradeList {
     }
 
     public int calcAvg() {
-	int total = 0;
-	for (int i = 0; i < values.size(); i++) {
-	    total = total + values.get(i);
+	if (values.size() == 0) {
+	    return 0;
+	} else {
+	    int total = 0;
+	    for (int i = 0; i < values.size(); i++) {
+		total = total + values.get(i);
+	    }
+	    int avg = total / values.size();
+	    return avg;
 	}
-	int avg = total / values.size();
-	return avg;
+    }
+
+    public int getAvg() {
+	return average.getGrade();
     }
     
     public String toString(){

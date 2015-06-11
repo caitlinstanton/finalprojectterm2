@@ -53,7 +53,11 @@ public class Teacher {
     }
 
     public String toString() {
-	return name + ":" + "\n" + myClass;
+	String ans = "TEACHER: " + name + "-" + "\n";
+	for (int i = 0; i < myClass.size(); i++) {
+	    ans = ans + myClass.get(i).toString() + "\n";
+	}
+	return ans;
     }
 
 }
