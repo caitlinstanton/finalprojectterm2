@@ -3,32 +3,33 @@ import java.io.*;
 
 public class Gradebook {
 
-    private ArrayList<StudentList> teachers;
+    private ArrayList<Teacher> teachers;
 
     public Gradebook() {
-        teachers = new ArrayList<StudentList>();
+        teachers = new ArrayList<Teacher>();
     }
     
     //Name entered is last name
-    public String addTeacher(String name) {
-	StudentList n = new StudentList(name);
-	teachers.add(n);
-	return name;
+    public void addTeacher(String name) {
+	Teacher tmp = new Teacher(name);
+	teachers.add(tmp);
     }
     
-    public StudentList getTeacher(String name) {
+    public Teacher getTeacher(String name) {
 	for (int i = 0; i < teachers.size(); i++) {
-	    if (teachers.get(i).getRoot() == name) {
+	    if (teachers.get(i).getName() == name) {
 		return teachers.get(i);
 	    }
 	}
 	return null;
     }
 
+    //REMOVE A TEACHER
+
     public String toString() {
 	String ans = "";
 	for (int i = 0; i < teachers.size(); i++) {
-	    ans = ans + "," + teachers.get(i).getRoot();
+	    ans = ans + teachers.get(i) + "\n";
 	}
 	return ans;
     }
