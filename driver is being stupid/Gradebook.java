@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Gradebook {
 
-    private ArrayList<Teacher> teachers;
+    public ArrayList<Teacher> teachers;
 
     public Gradebook() {
         teachers = new ArrayList<Teacher>();
@@ -17,7 +17,7 @@ public class Gradebook {
     
     public Teacher getTeacher(String name) {
 	for (int i = 0; i < teachers.size(); i++) {
-	    if (teachers.get(i).getName() == name) {
+	    if (teachers.get(i).getName().equals(name)) {
 		return teachers.get(i);
 	    }
 	}

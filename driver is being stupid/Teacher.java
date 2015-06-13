@@ -30,7 +30,7 @@ public class Teacher {
     
     public Course findCourse(String s) {
 	for (int i = 0; i < myClasses.size(); i++) {
-	    if (myClasses.get(i).getName() == s) {
+	    if (myClasses.get(i).getName().equals(s)) {
 		return myClasses.get(i);
 	    }
 	}

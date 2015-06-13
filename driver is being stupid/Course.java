@@ -54,7 +54,7 @@ public class Course {
 
     public Student findStudent(String s) {
 	for (int i = 0; i < students.size(); i++) {
-	    if (students.get(i).getName() == s) {
+	    if (students.get(i).getName().equals(s)) {
 		return students.get(i);
 	    }
 	}

@@ -39,11 +39,23 @@ public class Driver2 {
 		    System.out.println("You are now going to add a course. Please type in the following parameters:");
 		    System.out.println("The teacher's last name");
 		    String teacher = in.nextLine();
+		    Teacher agh = stuy.getTeacher(teacher);
+		    
+		    boolean hasTeacher = false;
+		    for (int i = 0; i < stuy.teachers.size(); i++) {
+			if (stuy.teachers.get(i).getName().equals(teacher)) {
+			    hasTeacher =  true;
+			}
+		    }
+
+		    System.out.println(hasTeacher);
+
+		    System.out.println(agh);
 		    System.out.println("The course's name");
-		    String course = in.nextLine();
+		    String course = in.next();
 		    System.out.println("The number of students in the course");
 		    int num = in.nextInt();
-		    System.out.println(teacher + course + num);
+		    System.out.println(stuy.getTeacher(teacher).getCourses());
 		    if (stuy.getTeacher(teacher) != null) {
 			stuy.getTeacher(teacher).addCourse(course,num);
 			System.out.println("Here is the new course list for " + teacher);
