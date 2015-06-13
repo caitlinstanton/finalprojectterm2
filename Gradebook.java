@@ -1,42 +1,37 @@
 import java.util.*;
 import java.io.*;
 
-public class Gradebook
-{
-    /**
-     * The students in this gradebook.
-     */
-    private ArrayList<StudentList> teachers;
+public class Gradebook {
 
-    /**
-     * Creates an empty gradebook that can record grades for the given
-     * number of assignments.
-     *
-     * @param assignments a positive integer giving the number of assignments
-     *        to record grades for
-     */
-    public Gradebook()
-    {
-        teachers = new ArrayList<StudentList>();
+    public ArrayList<Teacher> teachers;
+
+    public Gradebook() {
+        teachers = new ArrayList<Teacher>();
     }
     
     //Name entered is last name
     public void addTeacher(String name) {
-	StudentList n = new StudentList(name);
-	teachers.add(n);
-	//Collections.sort(teachers);
+	Teacher tmp = new Teacher(name);
+	teachers.add(tmp);
     }
     
-    /**
-     * Print a report of all students with names, average grades, and
-     * number of zero grades.  The report is printed to
-     * <code>System.out</code>.
-     */
-    public void getTeacher(String name) {
+    public Teacher getTeacher(String name) {
 	for (int i = 0; i < teachers.size(); i++) {
-	    if (teachers.get(i).getRoot() == name) {
-		teachers.get(i).toString();
+	    if (teachers.get(i).getName().equals(name)) {
+		return teachers.get(i);
 	    }
 	}
+	return null;
     }
+
+    //REMOVE A TEACHER
+
+    public String toString() {
+	String ans = "";
+	for (int i = 0; i < teachers.size(); i++) {
+	    ans = ans + teachers.get(i) + "\n";
+	}
+	return ans;
+    }
+    
 }

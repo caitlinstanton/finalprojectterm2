@@ -3,61 +3,60 @@ import java.io.*;
 
 public class GradeList {
     
-    // private Node average;
-    private GradeNode n;
+    private GradeNode average, end;
     private int len;
+    private ArrayList<Integer> values;
     
     public GradeList() {
-	n = new GradeNode();
+	average = new GradeNode("AVERAGE", 0);
+	end = new GradeNode();
 	len = 0;
+	values = new ArrayList<Integer>();
+    }
+
+    public boolean isEmpty() {
+	if (len == 0) {
+	    return true;
+	} else {
+	    return false;
+	}
     }
 
     public void add(String assignment, int grade){
 	GradeNode tmp = new GradeNode(assignment, grade);
-	tmp.setNext(n);
-	n = tmp;
+	average.setNext(tmp);
+	tmp.setNext(end);
+	end = tmp;
+	len++;
+	values.add(grade);
+	average.setGrade(calcAvg());
     }
 
-    public void add(GradeNode g) {
-	g.setNext(n);
-	n = g;
-    }
-
-    public String find(int k) {
-	GradeNode tmp = n;
-	int counter = -1;
-	String s = "";
-	for (tmp = n; tmp != null; tmp = tmp.getNext()) {
-	    counter = counter + 1;
-	    if (counter == k) {
-	        s = s + tmp;
+    public int calcAvg() {
+	if (values.size() == 0) {
+	    return 0;
+	} else {
+	    int total = 0;
+	    for (int i = 0; i < values.size(); i++) {
+		total = total + values.get(i);
 	    }
+	    int avg = total / values.size();
+	    return avg;
 	}
-	return s;
     }
 
-    public void insert(String assignment, int grade) {
-	GradeNode added = new GradeNode(assignment, grade);
-	GradeNode tmp = n;
-	for (int i = 0; i < len; tmp = tmp.getNext()) {
-	    if (tmp == null) {
-		throw new IndexOutOfBoundsException();
-	    }
-	    i++;
-	}
-	added.setNext(tmp.getNext());
-	tmp.setNext(added);
+    public int getAvg() {
+	return average.getGrade();
     }
-
     
     public String toString(){
 	String s = "";
-	Node tmp;
-	for (tmp = l; tmp != null; tmp = tmp.getNext()){
-	    s = s + tmp + " --> ";
+	GradeNode tmp;
+	for (tmp = average; tmp != null; tmp = tmp.getNext()){
+	    s = s + tmp + "\n";
 	}
-	s = s + "null";
-	return s;
+        int e = s.indexOf("null");
+        return s.substring(0,e);
     }
     
 }
