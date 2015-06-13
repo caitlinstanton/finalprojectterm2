@@ -56,7 +56,7 @@ public class Teacher {
     public String toString() {
 	String ans = "TEACHER: " + name + "\n";
 	for (int i = 0; i < myClasses.size(); i++) {
-	    ans = ans + myClasses.get(i).toString() + "\n";
+	    ans = ans + myClasses.get(i).getName() + "\n";
 	}
 	return ans;
     }

@@ -7,8 +7,6 @@ public class Driver2 {
 	Scanner in = new Scanner(System.in);
 	Gradebook stuy = new Gradebook();
 	
-
-
 	stuy.addTeacher("Zamansky");
 	stuy.addTeacher("EMILY IS WEIRD");
 	stuy.addTeacher("Caitliiin");
@@ -17,10 +15,9 @@ public class Driver2 {
 	stuy.getTeacher("Zamansky").findCourse("CS").addStudent("B");
 	stuy.getTeacher("Zamansky").findCourse("CS").addStudent("C"); 
 	stuy.getTeacher("Zamansky").findCourse("CS").addGrades("A", "blah", 109);
-	//System.out.println(stuy.getTeacher("Zamansky").getCourses());
 
 	System.out.println("Hello and welcome to StuyGrades, a gradebook designed by Caitlin Stanton and Michael Mattson!");
-
+	System.out.println();
 	System.out.println("Would you like to add or find an object? Type 'add' for the former or 'find' for the latter. If you are done with the program, type 'done'");
 	String action = in.nextLine();
 	while (!(action.equals("done"))) {
@@ -28,6 +25,7 @@ public class Driver2 {
 	    case "add":
 		System.out.println("You have selected that you wish to add an object. Do you want to add a teacher, course, student, or grade? Type 'teacher', 'course', 'student', or 'grade', respectively");
 		String add = in.nextLine();
+		System.out.println();
 		switch (add) {
 		case "teacher":
 		    System.out.println("You are now going to add a teacher. Please type in the last name of the teacher");
@@ -90,11 +88,51 @@ public class Driver2 {
 
 
 	    case "find":
-		System.out.println("You are now going to find a teacher. Please type in the last name of the teacher");
+		System.out.println("You have selected that you wish to find an object. Do you want to add a teacher, course, student, or grade? Type 'teacher', 'course', 'student', or 'grade', respectively");
 		String find = in.nextLine();
-		ArrayList<Course> course = stuy.getTeacher(find).getCourses();
-		System.out.println(course);
-		break;
+		System.out.println();
+		switch (find) {
+		case "teacher":
+		    System.out.println("You are now going to find a teacher. Please type in the last name of the teacher");
+		    String findName = in.nextLine();
+		    if (stuy.getTeacher(findName) != null) {
+			System.out.println("Here is " + findName + " and their courses");
+			System.out.println(stuy.getTeacher(findName));
+		    } else {
+			System.out.println("We're sorry, but that teacher is not yet entered in the gradebook. Please try again.");
+		    }
+		    break;
+		case "course":
+		    System.out.println("You are now going to find a course. Please type in the following parameters:");
+		    System.out.println("The teacher's last name");
+		    String findTeacher = in.nextLine();
+		    System.out.println("The course's name");
+		    String findCourse = in.next();
+		    if (stuy.getTeacher(findTeacher) != null) {
+			if (stuy.getTeacher(findTeacher).findCourse(findCourse) != null) {
+			    System.out.println("Here is course " + findCourse);
+			    System.out.println(stuy.getTeacher(findTeacher).findCourse(findCourse));
+			} else {
+			    System.out.println("We're sorry, but that course could not be found. Please try again.");
+			}
+		    } else {
+			System.out.println("We're sorry, but that teacher is not yet entered in the gradebook. Please try again.");
+		    }
+		    break;
+		case "student":
+		    System.out.println("You are now going to add a student. Please type in the following parameters:");
+		    System.out.println("Their teacher's last name");
+		    String teacher2 = in.nextLine();
+		    System.out.println("The course they are enrolled in");
+		    String course2 = in.nextLine();
+		    System.out.println("The student's name, in the form of last name, first name");
+		    String student = in.nextLine();
+		    stuy.getTeacher(teacher2).findCourse(course2).addStudent(student);
+		    System.out.println("Here is the new student list for " + teacher2 + "'s course, " + course2);
+		    String newStudents = stuy.getTeacher(teacher2).findCourse(course2).getStudents();
+		    System.out.println(newStudents);
+		    break;
+		}
 	    case "done":
 		System.exit(0);
 		break;

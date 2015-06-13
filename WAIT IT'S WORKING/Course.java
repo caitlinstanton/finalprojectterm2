@@ -66,7 +66,7 @@ public class Course {
     }
 
     public String toString() {
-	String ans = "Course " + getName() + ":" + "\n";
+	String ans = "";
 	for (int i = 0; i < students.size(); i++) {
 	    ans = ans + students.get(i).getName() + ", " + students.get(i).getAvg() + "\n";
 	}
