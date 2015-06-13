@@ -34,8 +34,12 @@ public class Course {
 	return numKids;
     }
 
-    public ArrayList<Student> getStudents() {
-	return students;
+    public String getStudents() {
+	String ans = "COURSE: " + getName() + "\n";
+	for (int i = 0; i < students.size(); i++) {
+	    ans = ans + students.get(i).getName() + " -- " + students.get(i).getAvg() + "\n";
+	}
+	return ans;
     }
     
     public void addStudent(String s) {

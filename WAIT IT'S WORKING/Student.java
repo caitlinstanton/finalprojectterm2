@@ -30,7 +30,6 @@ public class Student {
     }
 
     public GradeList getGrades() {
-    System.out.print(name+"'s Grades:\n");
 	return grades;
     }
 

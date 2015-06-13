@@ -39,18 +39,6 @@ public class Driver2 {
 		    System.out.println("You are now going to add a course. Please type in the following parameters:");
 		    System.out.println("The teacher's last name");
 		    String teacher = in.nextLine();
-		    Teacher agh = stuy.getTeacher(teacher);
-		    
-		    boolean hasTeacher = false;
-		    for (int i = 0; i < stuy.teachers.size(); i++) {
-			if (stuy.teachers.get(i).getName().equals(teacher)) {
-			    hasTeacher =  true;
-			}
-		    }
-
-		    System.out.println(hasTeacher);
-
-		    System.out.println(agh);
 		    System.out.println("The course's name");
 		    String course = in.next();
 		    System.out.println("The number of students in the course");
@@ -69,15 +57,14 @@ public class Driver2 {
 		    System.out.println("You are now going to add a student. Please type in the following parameters:");
 		    System.out.println("Their teacher's last name");
 		    String teacher2 = in.nextLine();
-		    Teacher toTeacher = stuy.getTeacher(teacher2);
 		    System.out.println("The course they are enrolled in");
 		    String course2 = in.nextLine();
-		    Course inCourse = toTeacher.findCourse(course2);
 		    System.out.println("The student's name, in the form of last name, first name");
 		    String student = in.nextLine();
-		    inCourse.addStudent(student);
+		    stuy.getTeacher(teacher2).findCourse(course2).addStudent(student);
 		    System.out.println("Here is the new student list for " + teacher2 + "'s course, " + course2);
-		    ArrayList<Student> newStudents = inCourse.getStudents();
+		    String newStudents = stuy.getTeacher(teacher2).findCourse(course2).getStudents();
+		    System.out.println(newStudents);
 		    break;
 		case "grade":
 		    System.out.println("You are now going to add a grade. Please type in the following parameters:");
@@ -94,6 +81,7 @@ public class Driver2 {
 		    stuy.getTeacher(teacher3).findCourse(course3).addGrades(student3, assignment, grade);
 		    System.out.println("Here is the new grade list for " + student3);
 		    GradeList newGrade = stuy.getTeacher(teacher3).findCourse(course3).findStudent(student3).getGrades();
+		    System.out.println(newGrade);
 		    break;
 		default:
 		    System.out.println("agh");
