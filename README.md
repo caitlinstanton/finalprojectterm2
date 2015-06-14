@@ -1,6 +1,6 @@
 <h1>Caitlin and Michael's Final Project</h1>
 Period 1
-Michael Mattson and Caitlin Stanton
+Caitlin Stanton and Michael Mattson
 
 <h2>What our product does:</h2>
 This is StuyGrades, an electronic gradebook. It allows users to add or find teachers, courses, or students in a neat and efficient manner. All the user has to do is type in the parameters and press enter.
