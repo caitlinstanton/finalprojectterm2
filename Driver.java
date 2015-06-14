@@ -5,6 +5,7 @@ public class Driver {
 
     static Scanner in;
     static Gradebook stuy;
+    static String helper = "";
 
     public static void add() {
 	System.out.println("You have selected that you wish to add an object. Do you want to add a teacher, course, student, or grade? Type 'teacher', 'course', 'student', or 'grade', respectively, to select.");
@@ -140,7 +141,7 @@ public class Driver {
 	    break;
 	}   
     }
-
+    
     public static void main(String[] args) {
 	in = new Scanner(System.in);
 	stuy = new Gradebook("Stuyvesant");
@@ -162,7 +163,7 @@ public class Driver {
 	    System.out.println();
 	    int i = 0;
 	    while (i % 2 == 0) {
-		System.out.println("Would you like to add or find an object? Type 'add' for the former or 'find' for the latter. If you are done with the program, type 'done'");
+		System.out.println("Would you like to add or find an object? Type 'add' for the former or 'find' for the latter. Type 'view' to see the gradebook as it currently exists. If you are done with the program, type 'done'");
 		String action = in.nextLine().toLowerCase();
 		System.out.println();
 		if (action.equals("add")) {
@@ -175,7 +176,11 @@ public class Driver {
 		    i = i + 2;
 		} else if (action.equals("done")) {
 		    System.exit(0);
-		} else {
+        } else if (action.equals("view")){
+            stuy.viewResults;
+            exit = false;
+            i = i + 2;
+        }else {
 		    i = i + 1;
 		    System.out.println("We're sorry, but it appears that your command is invalid. Please try again.");
 		}

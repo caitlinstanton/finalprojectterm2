@@ -38,7 +38,11 @@ public class Gradebook {
 	}
 	return null;
     }
-
+    
+    public String viewResults(){
+        return this.toString();
+    }
+    
     public static Comparator<Teacher> teacherNameCompare = new Comparator<Teacher>() {
 	public int compare(Teacher t1, Teacher t2) {
 	    String t1Name = t1.getName().toUpperCase();
