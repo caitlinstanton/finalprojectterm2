@@ -34,17 +34,14 @@ public class Course {
 	return numKids;
     }
 
-    public String getStudents() {
-	String ans = "COURSE: " + getName() + "\n";
-	for (int i = 0; i < students.size(); i++) {
-	    ans = ans + students.get(i).getName() + " -- " + students.get(i).getAvg() + "\n";
-	}
-	return ans;
+    public ArrayList<Student> getStudents() {
+	return students;
     }
     
     public void addStudent(String s) {
 	Student n = new Student(s);
 	students.add(n);
+	Collections.sort(students, studentNameCompare);
     }
 
     public void addGrades(String student, String type, int grade) {
@@ -64,6 +61,14 @@ public class Course {
 	}
 	return null;
     }
+    
+    public static Comparator<Student> studentNameCompare = new Comparator<Student>() {
+        public int compare(Student s1, Student s2) {
+            String s1Name = s1.getName().toUpperCase();
+            String s2Name = s2.getName().toUpperCase();
+            return s1Name.compareTo(s2Name);
+        }
+    };
 
     public String toString() {
 	String ans = "";

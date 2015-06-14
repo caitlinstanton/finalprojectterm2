@@ -24,8 +24,13 @@ public class Teacher {
 	return name;
     }
 
-    public ArrayList<Course> getCourses() {
-	return myClasses;
+    public String getCourses() {
+	String result = "";
+        Collections.sort(myClasses, courseNameCompare);
+	for (int i = 0; i < myClasses.size(); i++) {
+	    result = result + myClasses.get(i).getName() + "\n";
+	}
+	return result;
     }
     
     public Course findCourse(String s) {
@@ -51,10 +56,17 @@ public class Teacher {
 	    System.exit(0);
 	}	
     }
-
+    
+    public static Comparator<Course> courseNameCompare = new Comparator<Course>() {
+	public int compare(Course c1, Course c2) {
+	    String c1Name = c1.getName().toUpperCase();
+	    String c2Name = c2.getName().toUpperCase();
+	    return c1Name.compareTo(c2Name);
+	}
+    };
 
     public String toString() {
-	String ans = "TEACHER: " + name + "\n";
+	String ans = name + "\n";
 	for (int i = 0; i < myClasses.size(); i++) {
 	    ans = ans + myClasses.get(i).getName() + "\n";
 	}

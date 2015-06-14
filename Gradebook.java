@@ -4,12 +4,27 @@ import java.io.*;
 public class Gradebook {
 
     public ArrayList<Teacher> teachers;
+    private String name;
 
     public Gradebook() {
+	name = null;
+	teachers = null;
+    }
+
+    public Gradebook(String s) {
+	name = s;
         teachers = new ArrayList<Teacher>();
+	Collections.sort(teachers, teacherNameCompare);
     }
     
-    //Name entered is last name
+    public String getName() {
+	return name;
+    }
+
+    public void setName(String s) {
+	name = s;
+    }
+
     public void addTeacher(String name) {
 	Teacher tmp = new Teacher(name);
 	teachers.add(tmp);
@@ -26,10 +41,18 @@ public class Gradebook {
 
     //REMOVE A TEACHER
 
+    public static Comparator<Teacher> teacherNameCompare = new Comparator<Teacher>() {
+	public int compare(Teacher t1, Teacher t2) {
+	    String t1Name = t1.getName().toUpperCase();
+	    String t2Name = t2.getName().toUpperCase();
+	    return t1Name.compareTo(t2Name);
+	}
+    };
+
     public String toString() {
 	String ans = "";
 	for (int i = 0; i < teachers.size(); i++) {
-	    ans = ans + teachers.get(i) + "\n";
+	    ans = ans + teachers.get(i).getName() + "\n";
 	}
 	return ans;
     }
