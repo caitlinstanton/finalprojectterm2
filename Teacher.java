@@ -25,17 +25,21 @@ public class Teacher {
     }
 
     public String getCourses() {
-	String result = "";
-        Collections.sort(myClasses, courseNameCompare);
-	for (int i = 0; i < myClasses.size(); i++) {
-	    result = result + myClasses.get(i).getName() + "\n";
+	String result;
+	if (myClasses.size() != 0) {
+	    result = "";
+	    Collections.sort(myClasses, courseNameCompare);
+	    for (int i = 0; i < myClasses.size(); i++) {
+		result = result + myClasses.get(i).getName() + "\n";
+	    }
+	    return result;
 	}
-	return result;
+	return "There are no courses for this teacher.";
     }
     
     public Course findCourse(String s) {
 	for (int i = 0; i < myClasses.size(); i++) {
-	    if (myClasses.get(i).getName().equals(s)) {
+	    if (myClasses.get(i).getName().toLowerCase().equals(s.toLowerCase())) {
 		return myClasses.get(i);
 	    }
 	}
@@ -45,6 +49,7 @@ public class Teacher {
     public void addCourse(String s, int n) {
 	Course added = new Course(s,n);
 	myClasses.add(added);
+	Collections.sort(myClasses, courseNameCompare);
     }
 
     public void addGrades(String myClass, String student, String type, int grade) {

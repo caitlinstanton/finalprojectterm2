@@ -35,6 +35,7 @@ public class Course {
     }
 
     public ArrayList<Student> getStudents() {
+	Collections.sort(students, studentNameCompare);
 	return students;
     }
     
@@ -55,7 +56,7 @@ public class Course {
 
     public Student findStudent(String s) {
 	for (int i = 0; i < students.size(); i++) {
-	    if (students.get(i).getName().equals(s)) {
+	    if (students.get(i).getName().toLowerCase().equals(s.toLowerCase())) {
 		return students.get(i);
 	    }
 	}

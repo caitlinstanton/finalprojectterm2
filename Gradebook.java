@@ -14,7 +14,6 @@ public class Gradebook {
     public Gradebook(String s) {
 	name = s;
         teachers = new ArrayList<Teacher>();
-	Collections.sort(teachers, teacherNameCompare);
     }
     
     public String getName() {
@@ -28,18 +27,17 @@ public class Gradebook {
     public void addTeacher(String name) {
 	Teacher tmp = new Teacher(name);
 	teachers.add(tmp);
+	Collections.sort(teachers, teacherNameCompare);
     }
     
     public Teacher getTeacher(String name) {
 	for (int i = 0; i < teachers.size(); i++) {
-	    if (teachers.get(i).getName().equals(name)) {
+	    if (teachers.get(i).getName().toLowerCase().equals(name.toLowerCase())) {
 		return teachers.get(i);
 	    }
 	}
 	return null;
     }
-
-    //REMOVE A TEACHER
 
     public static Comparator<Teacher> teacherNameCompare = new Comparator<Teacher>() {
 	public int compare(Teacher t1, Teacher t2) {
