@@ -47,7 +47,8 @@ public class Driver2 {
 	    String student = in.nextLine();
 	    stuy.getTeacher(teacher2).findCourse(course2).addStudent(student);
 	    System.out.println("Here is the new student list for " + teacher2 + "'s course, " + course2);
-	    String newStudents = stuy.getTeacher(teacher2).findCourse(course2).getStudents();
+	    String newStudents = stuy.getTeacher(teacher2).findCourse(course2).getStudents();//Herein lies the problem
+        Collections.sort(//I can't put a string in here :( );
 	    System.out.println(newStudents);
 	    break;
 	case "grade":

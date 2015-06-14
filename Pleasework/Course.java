@@ -64,6 +64,14 @@ public class Course {
 	}
 	return null;
     }
+    
+    public static Comparator<Student> studentNameCompare = new Comparator<Student>() {
+        public int compare(Student s1, Student s2) {
+            String s1Name = s1.getName().toUpperCase();
+            String s2Name = s2.getName().toUpperCase();
+            return s1Name.compareTo(s2Name);
+        }
+    }
 
     public String toString() {
 	String ans = "";
