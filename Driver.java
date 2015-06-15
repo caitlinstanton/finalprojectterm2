@@ -142,7 +142,7 @@ public class Driver {
 	}   
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args)throws IOException {
 	in = new Scanner(System.in);
 	stuy = new Gradebook("Stuyvesant");
 
@@ -175,9 +175,20 @@ public class Driver {
 		    exit = false;
 		    i = i + 2;
 		} else if (action.equals("done")) {
+            String test = ""+stuy;
+            //System.out.println(stuy.getTeacher("Zamansky").getCourses());
+            File file = new File("Gradebook.txt");
+            // creates the file
+            file.createNewFile();
+            // creates a FileWriter Object
+            FileWriter writer = new FileWriter(file);
+            // Writes the content to the file
+            writer.write(test);
+            writer.flush();
+            writer.close();
 		    System.exit(0);
         } else if (action.equals("view")){
-            stuy.viewResults;
+            stuy.viewResults();
             exit = false;
             i = i + 2;
         }else {
