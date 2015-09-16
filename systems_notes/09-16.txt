@@ -25,3 +25,27 @@ C Primitive Variable Types
     - Size of variables may be platform dependent
       	   sizeof(<TYPE>) can be used to find the size in bytes
 	   		  - i.e. sizeof(int)
+    - TYPE		  STANDARD SIZE (in bytes)
+      int		  	   4
+      short			   2
+      long			   8
+      float			   4
+      double			   8
+      char			   1	--> in Java, it's 2 bytes
+      				   	--> essentially the byte variable
+      NO BOOLEAN VARIABLE    
+      	 - All boolean values are numbers
+	       0 --> false
+	       anything BESIDES 0 --> true
+
+    - YOU WILL ALL MAKE THIS MISTAKE:
+      	  if (x = 6) {...}
+	        ^
+	       / \
+	        |__ in order to compare, you must use the '==' and '!='
+		    like in Java
+	    This will just return true, because it sets x to 6--it doesn't 
+	    compare anything
+	  
+	  if (x = 0) {...}
+	    This will just return false, because it sets x to 0
