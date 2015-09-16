@@ -4,45 +4,28 @@ import java.io.*;
 public class Gradebook {
 
     public ArrayList<Teacher> teachers;
-    private String name;
 
     public Gradebook() {
-	name = null;
-	teachers = null;
-    }
-
-    public Gradebook(String s) {
-	name = s;
         teachers = new ArrayList<Teacher>();
     }
     
-    public String getName() {
-	return name;
-    }
-
-    public void setName(String s) {
-	name = s;
-    }
-
+    //Name entered is last name
     public void addTeacher(String name) {
 	Teacher tmp = new Teacher(name);
 	teachers.add(tmp);
-	Collections.sort(teachers, teacherNameCompare);
     }
     
     public Teacher getTeacher(String name) {
 	for (int i = 0; i < teachers.size(); i++) {
-	    if (teachers.get(i).getName().toLowerCase().equals(name.toLowerCase())) {
+	    if (teachers.get(i).getName().equals(name)) {
 		return teachers.get(i);
 	    }
 	}
 	return null;
     }
-    
-    public String viewResults(){
-        return this.toString();
-    }
-    
+
+    //REMOVE A TEACHER
+
     public static Comparator<Teacher> teacherNameCompare = new Comparator<Teacher>() {
 	public int compare(Teacher t1, Teacher t2) {
 	    String t1Name = t1.getName().toUpperCase();
