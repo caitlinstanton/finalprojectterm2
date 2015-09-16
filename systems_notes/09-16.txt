@@ -49,3 +49,17 @@ C Primitive Variable Types
 	  
 	  if (x = 0) {...}
 	    This will just return false, because it sets x to 0
+
+Data Types and Variables
+     
+     - Character literals are single characters inside ' '
+       	   ex. 'a', '*', ...
+     - String literals exist, even though there is no String data type
+       It is just an array of characters   
+       	   ex. "hello", "you smell"
+     - Variables can't be declared inside for loops statements, but they can be 
+       initialized
+	   ex. int = 0
+	       for (i = 0; i < 10; i++) {...}
+	       	   NOT 
+		   for (into i = 0; i < 10; i++) {...}
