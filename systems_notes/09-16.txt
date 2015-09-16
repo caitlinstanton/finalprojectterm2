@@ -1,0 +1,12 @@
+Aim: Variables are the spice of life
+
+Do Now: What is the smallest variable type that could be used to store the
+   	following values (using standard sizes).
+	1) 5
+	   + byte: ranges from -128 to 127 [(-2)^7 to (2^7)--1]
+	2) -30,000
+	   + 
+	3) 255
+	   + 
+	4) 5,000,000,000
+	   + 
