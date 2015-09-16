@@ -1,0 +1,60 @@
+Aim: C what I did there?
+
+Do Now:
+
+   From yesterday:
+   	4) Figure out what gcc does
+	5) Copy woohoo.c from your home directory to a /code/
+	   directory on homer (assume you are not working on
+	   homer itself)
+
+Today:
+	
+	List the java primitive variable types
+
+
+- To move a file: mv file-directory new-file-directory
+- To remove a file: rm file
+- To remove all of a file: rm * .whatev
+- To connect remotely: ssh username@other-place
+- To find out what a command does: man command-name
+- To move file from a computer to another server:
+     scp source destination
+     i.e. scp woohoo.c caitlin.stanton@homer.stuy.edu:/code/
+     - destination-->other-place:remote-directory
+       - if nothing after :, file will go to home directory
+
+
+- Prompt: username@computer:~[directory]$
+- pwd: shows present working directory
+
+
+Last Class Today!
+     
+     - Someone will be chosen each day to recap the previous day's class on Piazza
+     - Tag the note as "last class today"
+     - Title the note: LCT <MM/DD WEEKDAY>
+     	   - The day must eb the day you are posting notes from
+     - Include an interesting piece of tech/science news at the end, with a link
+     - Share the notes with just your class group
+     - Will be graded as a HW assignment
+     - Don't post late or points will be subtracted
+
+
+Primitive Variable Types in Java:
+     
+     - boolean: true/false
+     - char: single character
+     - int: 32-bit integer
+     - long: 64-bit integer with a longer range
+     - double: 64-bit floating point number
+     - float: 32-bit floating point number
+     - byte: 8-bit integer
+     - short: 16-bit integer
+
+
+C Programming Language
+     - Kernihan/Richie
+     - Only integer/flaoting point primitives
+       	    - No boolean
+	    - char is more connected to its integer value

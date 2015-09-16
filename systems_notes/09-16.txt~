@@ -22,6 +22,3 @@ C Primitive Variable Types
     - All C primitives are numeric
     - The only difference is floating point vs. integer and the size of the 
       variable
-    - Size of variables may be platform dependent
-      	   sizeof(<TYPE>) can be used to find the size in bytes
-	   		  - i.e. sizeof(int)
