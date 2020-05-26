@@ -11,7 +11,9 @@ You can add a new teacher, a new course for a teacher, a new student in a course
 You also have the option to find a teacher, course, or student, which wil output the list of courses, students, and grades respectively.
 
 <h2>CHANGE LOG</h2>
-- 5/10- Created repository (CS)
-- 5/11--5/21- Tried incorporating Processing...realized it sucks with our idea (CS, MM)
-- 5/24- Figured out the classes we would need to create a functional gradebook (CS, MM)
-- 5/25- Made a linked-list-esque class for 
+<ul>
+  <li>5/10- Created repository (CS)</li>
+  <li>5/11--5/21- Tried incorporating Processing...realized it sucks with our idea (CS, MM)</li>
+  <li>5/24- Figured out the classes we would need to create a functional gradebook (CS, MM)</li>
+  <li>5/25- Made a linked-list-esque class for</li>
+</ul>
